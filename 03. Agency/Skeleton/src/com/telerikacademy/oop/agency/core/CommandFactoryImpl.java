@@ -38,5 +38,4 @@ public class CommandFactoryImpl implements CommandFactory {
                 throw new IllegalArgumentException(String.format(INVALID_COMMAND, commandName));
         }
     }
-
 }

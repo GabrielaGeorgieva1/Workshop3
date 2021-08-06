@@ -1,6 +1,6 @@
 package com.telerikacademy.oop.agency.models.vehicles.contracts;
 
-public interface Train {
+public interface Train extends Vehicle {
 
     int getCarts();
 

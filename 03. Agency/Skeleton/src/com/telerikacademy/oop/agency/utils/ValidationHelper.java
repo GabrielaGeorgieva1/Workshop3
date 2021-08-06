@@ -1,5 +1,9 @@
 package com.telerikacademy.oop.agency.utils;
 
+
+import com.telerikacademy.oop.agency.exceptions.InvalidUserInputException;
+
+
 import java.util.List;
 
 public class ValidationHelper {
@@ -7,8 +11,9 @@ public class ValidationHelper {
     public static final String INVALID_NUMBER_OF_ARGUMENTS = "Invalid number of arguments. Expected: %d, Received: %d";
 
     public static void validateValueInRange(double value, double min, double max, String errorMessage) {
-        // Needs to check if value > min and if value < max
-        throw new UnsupportedOperationException("Not implemented yet.");
+        if(value < min || value > max){
+            throw new InvalidUserInputException(errorMessage);
+        }
     }
 
     public static void validateStringLength(String stringToValidate, int minLength, int maxLength, String errorMessage) {
@@ -20,5 +25,6 @@ public class ValidationHelper {
             throw new IllegalArgumentException(String.format(INVALID_NUMBER_OF_ARGUMENTS, expectedArgumentsCount, list.size()));
         }
     }
+
 
 }
